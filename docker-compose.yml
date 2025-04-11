@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  maid:
+    image: gaodes/maid:latest
+    container_name: maid-service
+    restart: always
+    volumes:
+      # Mount your rules file into the container
+      - ${HOME}/.maid:/root/.maid
+      # Optional: Mount the directories you want to clean
+      # - /path/to/clean:/path/to/clean
+    # The container will run in the background with tail -f /dev/null
