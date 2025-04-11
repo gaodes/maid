@@ -18,8 +18,8 @@ RUN git clone https://github.com/maid/maid.git . \
     && gem build maid.gemspec \
     && gem install maid-*.gem
 
-# Create default maid directory structure
-RUN mkdir -p /root/.maid
+# Create default maid directory structure including logs
+RUN mkdir -p /root/.maid/logs && chmod -R 755 /root/.maid
 
 # Set environment variable as in the original Dockerfile
 ENV ISOLATED=true

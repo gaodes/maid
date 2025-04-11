@@ -8,6 +8,8 @@ services:
     volumes:
       # Mount your rules file into the container
       - ${HOME}/.maid:/root/.maid
+      # Mount logs directory
+      - ${HOME}/.maid/logs:/root/.maid/logs
       # Optional: Mount the directories you want to clean
       # - /path/to/clean:/path/to/clean
     # The container will run in the background with tail -f /dev/null
