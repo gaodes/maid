@@ -6,8 +6,8 @@ services:
     container_name: maid-service
     restart: always
     volumes:
-      # Mount your rules file into the container
-      - ${HOME}/.maid:/root/.maid
+      # Mount a directory of rules
+      - ./rules:/root/.maid/rules
       # Mount logs directory
       - ${HOME}/.maid/logs:/root/.maid/logs
       # Optional: Mount the directories you want to clean
